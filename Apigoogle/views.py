@@ -20,6 +20,9 @@ from .serializers import UserSerializer
 def login(request):
     username = request.data.get("username")
     password = request.data.get("password")
+    print(request.data)
+    print(username)
+    print(password)
     if username is None or password is None:
         return Response({'error': 'Please provide both username and password'},
                         status=HTTP_400_BAD_REQUEST)
